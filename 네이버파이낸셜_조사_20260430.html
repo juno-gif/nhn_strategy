@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280, initial-scale=1.0">
+    <title>네이버파이낸셜 - 최근 실적 및 전략 동향</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+        :root {
+            --nhn-black: #1a1a1a;
+            --nhn-white: #ffffff;
+            --nhn-gray-bg: #f4f4f4;
+            --nhn-blue: #4b91ff;
+            --nhn-red: #ff4b4b;
+            --text-dark: #333333;
+            --text-gray: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #cccccc; color: var(--text-dark); }
+
+        .slide-container { width: 1280px; margin: 0 auto; }
+        
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 표지 스타일 (Black) */
+        .slide.cover { background-color: var(--nhn-black); color: var(--nhn-white); padding: 80px; justify-content: center; }
+        .confidential { position: absolute; top: 40px; right: 80px; border: 1px solid var(--nhn-red); color: var(--nhn-red); padding: 4px 12px; font-size: 14px; font-weight: bold; }
+        .cover-title { font-size: 60px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; }
+        .cover-subtitle { font-size: 24px; font-weight: 300; color: #999; }
+
+        /* 본문 스타일 (White) */
+        .slide.body { background-color: var(--nhn-white); color: var(--text-dark); padding: 50px 80px 80px 80px; }
+        .slide-header { border-bottom: 2px solid var(--nhn-black); margin-bottom: 25px; padding-bottom: 10px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .slide-title { font-size: 32px; font-weight: 700; color: var(--nhn-black); }
+        .slide-subtitle { font-size: 16px; color: var(--nhn-blue); font-weight: 700; margin-bottom: 5px; }
+
+        /* 콘텐츠 영역 */
+        .content-area { flex: 1; overflow: hidden; position: relative; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        
+        /* 테이블 스타일 */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 13px; }
+        th { background-color: #eee; color: #333; padding: 8px; text-align: center; border: 1px solid #ddd; font-weight: 700; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: middle; text-align: center; }
+        .bg-blue { background-color: #f0f7ff; }
+        td:first-child, th:first-child { text-align: left; font-weight: 700; }
+
+        /* 리스트 및 박스 */
+        .info-box { background-color: var(--nhn-gray-bg); padding: 15px; border-radius: 4px; margin-bottom: 15px; }
+        .info-box h4 { font-size: 16px; color: var(--nhn-blue); margin-bottom: 8px; border-left: 4px solid var(--nhn-blue); padding-left: 10px; }
+        .bullet-list { list-style: none; font-size: 13px; line-height: 1.6; }
+        .bullet-list li { position: relative; padding-left: 15px; margin-bottom: 4px; }
+        .bullet-list li::before { content: "•"; position: absolute; left: 0; color: var(--nhn-blue); font-weight: bold; }
+
+        /* 하단 고정 (잘림 방지) */
+        .footer { position: absolute; bottom: 30px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
+        .nhn-logo { font-size: 20px; font-weight: 900; letter-spacing: 1px; }
+        .nhn-logo.white { color: white; }
+        .nhn-logo.black { color: black; }
+        .page-num { font-size: 12px; color: #999; }
+        .copyright { font-size: 11px; color: #bbb; }
+
+        /* 강조 텍스트 */
+        .accent { color: var(--nhn-blue); font-weight: 700; }
+        .warning { color: var(--nhn-red); font-weight: 700; }
+        .key-insight { background-color: #fff8e1; border-left: 4px solid #ffc107; padding: 12px; margin: 15px 0; font-size: 14px; line-height: 1.5; }
+        .highlight-box { background-color: #e8f5e9; padding: 15px; border-radius: 4px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+
+    <!-- 슬라이드 1: 표지 -->
+    <div class="slide cover">
+        
+        <div class="cover-title">네이버파이낸셜<br>최근 실적 및 전략 동향</div>
+        <div class="cover-subtitle">2026. 04. 30</div>
+        <div class="footer">
+            <div class="nhn-logo white">NHN</div>
+            <div class="copyright">© 2026 NHN Corp. All Rights Reserved.</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 2: 실적 개요 -->
+    <div class="slide body">
+        <div class="slide-header">
+            <div>
+                <div class="slide-subtitle">Performance Overview</div>
+                <div class="slide-title">최근 5년간 실적 요약</div>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="key-insight">
+                <strong>핵심 요약:</strong> 외부 생태계 확장 전략을 통해 결제금액 CAGR +23%, 영업이익 CAGR +29% 달성하며 지속가능한 성장 경로 확보
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--nhn-black);">결제금액(TPV) 추이</h3>
+                <table>
+                    <tr>
+                        <th>구분 (단위: 조원)</th>
+                        <th>2021</th>
+                        <th>2022</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>CAGR</th>
+                    </tr>
+                    <tr class="bg-blue">
+                        <td>결제금액 (TPV)</td>
+                        <td>38</td>
+                        <td>49</td>
+                        <td>60</td>
+                        <td>72</td>
+                        <td><strong>86</strong></td>
+                        <td class="accent">+23%</td>
+                    </tr>
+                </table>
+                <ul class="bullet-list" style="margin-top: 10px;">
+                    <li>네이버페이 X 삼성페이 결제기능 추가(23년 3월) 및 외부 생태계 지속 확장</li>
+                    <li>25년 외부결제액 <strong>47조원</strong> (전체 대비 54%) ← 22년 38%에서 16%p 상승</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--nhn-black);">재무성과 추이</h3>
+                <table>
+                    <tr>
+                        <th>구분 (단위: 억원)</th>
+                        <th>2021</th>
+                        <th>2022</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>2025</th>
+                        <th>CAGR</th>
+                    </tr>
+                    <tr>
+                        <td>매출</td>
+                        <td>10,453</td>
+                        <td>12,573</td>
+                        <td>14,765</td>
+                        <td>16,474</td>
+                        <td><strong>18,612</strong></td>
+                        <td class="accent">+16%</td>
+                    </tr>
+                    <tr class="bg-blue">
+                        <td>영업이익</td>
+                        <td>459</td>
+                        <td>594</td>
+                        <td>912</td>
+                        <td>1,035</td>
+                        <td><strong>1,252</strong></td>
+                        <td class="accent">+29%</td>
+                    </tr>
+                    <tr>
+                        <td>영업이익률</td>
+                        <td>4.4%</td>
+                        <td>4.7%</td>
+                        <td>6.2%</td>
+                        <td>6.3%</td>
+                        <td><strong>6.7%</strong></td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <p style="font-size: 13px; color: var(--text-gray); margin-top: 10px;">* 영업이익률 지속 개선 추세 (4.4% → 6.7%)</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nhn-logo black">NHN</div>
+            <div class="page-num">2</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 3: 두나무 합병 -->
+    <div class="slide body">
+        <div class="slide-header">
+            <div>
+                <div class="slide-subtitle">Strategic Move #1</div>
+                <div class="slide-title">두나무 X 네이버파이낸셜 합병</div>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="info-box">
+                <h4>핵심 구조 및 밸류에이션</h4>
+                <ul class="bullet-list">
+                    <li>합병비율: 네이버파이낸셜 1 : 두나무 2.54</li>
+                    <li>기업가치: 네이버파이낸셜 약 5조원 / 두나무 약 15조원</li>
+                    <li>포괄적 주식교환을 통해 네이버파이낸셜이 두나무 100% 지배</li>
+                </ul>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <div class="info-box">
+                        <h4>합병 일정 (3개월 연기)</h4>
+                        <ul class="bullet-list">
+                            <li><span class="warning">[변경]</span> 주주총회 8/18 → 합병 완료 9/30</li>
+                            <li>기업결합 심사 지연 및 디지털 자산 기본법 입법 불확실성 영향</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>지분 구조 (합병 후)</h4>
+                        <ul class="bullet-list">
+                            <li>송치형(두나무 회장) 19.5%</li>
+                            <li>네이버 17% (투자자간 계약으로 의결권 확보)</li>
+                            <li>김형년(두나무 부회장) 10%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="info-box">
+                        <h4>상장 계획 및 리스크</h4>
+                        <ul class="bullet-list">
+                            <li>최장 7년 내 네이버파이낸셜 상장 추진 (26.4.15 공시)</li>
+                            <li>1년 이내 IPO 위원회 구성, 5년 내 상장 추진 (+2년 연장 가능)</li>
+                            <li class="warning">현 정부 중복상장 규제 강화로 국내 상장 불확실</li>
+                            <li>나스닥 상장 가능성 검토 중</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong style="color: var(--nhn-blue);">기대 시너지</strong>
+                        <ul class="bullet-list" style="margin-top: 8px;">
+                            <li><strong>원화 스테이블코인:</strong> 네이버페이(MAU 3천만/가맹점 500만) + 두나무 블록체인 기술력</li>
+                            <li>미래에셋증권 전망: 2028년 1조원 → 2030년 5조원 규모</li>
+                            <li>Npay 월렛 연계로 발행-보관-결제 통합 플랫폼 구현</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nhn-logo black">NHN</div>
+            <div class="page-num">3</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 4: 커넥트 단말기 -->
+    <div class="slide body">
+        <div class="slide-header">
+            <div>
+                <div class="slide-subtitle">Strategic Move #2</div>
+                <div class="slide-title">커넥트(CONNECT) 단말기 - O2O 생태계 확장</div>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="key-insight">
+                <strong>전략적 의의:</strong> 단순 결제 수단을 넘어 온·오프라인 연결 CRM 플랫폼으로 진화, 소상공인 데이터 기반 마케팅 역량 강화
+            </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div>
+                    <div class="info-box">
+                        <h4>주요 특징</h4>
+                        <ul class="bullet-list">
+                            <li>25년 11월 정식 출시</li>
+                            <li>카드/네이버페이/NFC/QR/페이스결제 등 통합 지원</li>
+                            <li>네이버 플레이스 연동: 리뷰, 쿠폰, 예약 기능 오프라인 활용</li>
+                            <li>온·오프라인 통합 CRM 서비스 제공</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>최근 제휴 현황</h4>
+                        <ul class="bullet-list">
+                            <li class="accent"><strong>파리바게뜨 제휴 체결</strong></li>
+                            <li>전국 3,400여 개 매장 단말기 도입 추진</li>
+                            <li>26년 하반기 중 직영매장부터 순차 설치 예정</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="highlight-box">
+                        <strong style="color: var(--nhn-blue); font-size: 16px;">Npay Biz 연계 가치 제공</strong>
+                        <p style="font-size: 13px; margin: 10px 0; line-height: 1.6;">
+                            커넥트 이용 데이터 기반 가맹점 플랫폼 'Npay Biz'를 통해 소상공인 맞춤형 인사이트 제공:
+                        </p>
+                        <ul class="bullet-list">
+                            <li>매장 방문객 트렌드 분석</li>
+                            <li>주변 상권 동향 리포트</li>
+                            <li>동종 업종 비교 분석</li>
+                            <li>매장 성장 지수 제공</li>
+                        </ul>
+                        <p style="font-size: 12px; color: var(--text-gray); margin-top: 10px;">
+                            → 소상공인이 직접 마케팅 전략 수립 가능
+                        </p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>시장 포지셔닝</h4>
+                        <ul class="bullet-list">
+                            <li>토스: 한국프랜차이즈산업협회 제휴, 페이스페이 확산</li>
+                            <li class="accent">네이버: 데이터 기반 CRM 차별화 전략</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nhn-logo black">NHN</div>
+            <div class="page-num">4</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 5: AI 전략 -->
+    <div class="slide body">
+        <div class="slide-header">
+            <div>
+                <div class="slide-subtitle">Strategic Move #3 & #4</div>
+                <div class="slide-title">생성형 AI 기반 서비스 고도화</div>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="grid-2">
+                <div>
+                    <div class="info-box">
+                        <h4>쇼핑 AI 에이전트 (26년 2월 출시)</h4>
+                        <ul class="bullet-list">
+                            <li>네이버플러스스토어 앱에 베타버전 적용</li>
+                            <li>네이버 '에이전트 N' 프로젝트의 첫 주자</li>
+                            <li>상품 정보 요약, 비교, 리뷰 분석 기능</li>
+                            <li>디지털/리빙/생활 → 상반기 내 뷰티/식품 확장</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong style="color: var(--nhn-blue);">특징</strong>
+                        <ul class="bullet-list" style="margin-top: 8px;">
+                            <li>실제 리뷰 종합 → 실용적 조언 제공</li>
+                            <li>스마트스토어 입점 업체 중심 추천</li>
+                            <li>탐색 중심 UX (가이드 제공 방식)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box" style="margin-top: 15px;">
+                        <h4>네이버파이낸셜 관점 임팩트</h4>
+                        <ul class="bullet-list">
+                            <li class="accent">결제 전환율 상승 → 매출 증가</li>
+                            <li>금융 에이전트로 확장 예정</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="info-box">
+                        <h4>AI 기반 맞춤 금융서비스</h4>
+                        <p style="font-size: 12px; color: var(--text-gray); margin-bottom: 10px;">Npay 미디어데이 2025 주요 발표 내용</p>
+                        <ul class="bullet-list">
+                            <li><strong>데이터 활용 범위:</strong></li>
+                            <li style="padding-left: 30px;">결제 데이터 기반 비금융 정보</li>
+                            <li style="padding-left: 30px;">검색, 대출/보험/카드/부동산/증권 트래픽</li>
+                            <li style="padding-left: 30px;">마이데이터 기반 정보</li>
+                            <li style="padding-left: 30px;">금융 커뮤니티 데이터</li>
+                            <li style="padding-left: 30px;">Npay 연결 사업자 정보</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong style="color: var(--nhn-blue);">출시 서비스 예시</strong>
+                        <ul class="bullet-list" style="margin-top: 8px;">
+                            <li><strong>AI 집찾기:</strong> LLM 기반 맞춤 부동산 매물 추천</li>
+                            <li><strong>머니브리핑:</strong> 마이데이터 연결 금융자산 실시간 정보 제공</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box" style="margin-top: 15px;">
+                        <h4>에이전트 N 전략</h4>
+                        <ul class="bullet-list">
+                            <li>검색, 쇼핑, 지도, 결제 등 전 서비스 연결</li>
+                            <li>로컬 에이전트 (지도+스마트플레이스)</li>
+                            <li class="accent">금융 에이전트 (네이버페이 중심)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nhn-logo black">NHN</div>
+            <div class="page-num">5</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 6: CEO 정보 -->
+    <div class="slide body">
+        <div class="slide-header">
+            <div>
+                <div class="slide-subtitle">Appendix</div>
+                <div class="slide-title">박상진 네이버파이낸셜 대표이사</div>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="grid-2">
+                <div>
+                    <div class="info-box">
+                        <h4>기본 정보</h4>
+                        <ul class="bullet-list">
+                            <li>1972년생</li>
+                            <li>연세대학교 응용통계학과 졸업</li>
+                            <li>고려대학교 경영대학원 석사</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box" style="margin-top: 20px;">
+                        <strong style="color: var(--nhn-blue); font-size: 16px;">특징</strong>
+                        <p style="font-size: 13px; margin-top: 10px; line-height: 1.6;">
+                            네이버 초기부터 25년간 재무/경영기획 전문가로서<br>
+                            CFO 경력(2016-2022)을 바탕으로<br>
+                            네이버파이낸셜 성장 전략 주도
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="info-box">
+                        <h4>주요 경력</h4>
+                        <table style="font-size: 12px; margin-top: 10px;">
+                            <tr>
+                                <th style="width: 35%;">기간</th>
+                                <th>직책</th>
+                            </tr>
+                            <tr>
+                                <td>1997 ~ 1999</td>
+                                <td>삼성SDS</td>
+                            </tr>
+                            <tr class="bg-blue">
+                                <td>1999.11 ~ 2004.6</td>
+                                <td>네이버 경영기획 팀장</td>
+                            </tr>
+                            <tr class="bg-blue">
+                                <td>2004.7 ~ 2007.6</td>
+                                <td>네이버 재무기획실장</td>
+                            </tr>
+                            <tr class="bg-blue">
+                                <td>2007.7 ~ 2016.1</td>
+                                <td>네이버 재무기획 담당이사</td>
+                            </tr>
+                            <tr class="bg-blue">
+                                <td>2016.2 ~ 2022.3</td>
+                                <td><strong>네이버 CFO</strong></td>
+                            </tr>
+                            <tr style="background-color: #e8f5e9;">
+                                <td><strong>2022.3 ~ 현재</strong></td>
+                                <td><strong>네이버파이낸셜 CEO</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nhn-logo black">NHN</div>
+            <div class="page-num">6</div>
+        </div>
+    </div>
+
+    <!-- 슬라이드 7: 종료 -->
+    <div class="slide cover">
+        <div style="text-align: center; width: 100%;">
+            <div style="font-size: 48px; font-weight: 900; margin-bottom: 30px;">감사합니다</div>
+            <div style="font-size: 18px; font-weight: 300; color: #999;">
+                NHN Corp.<br>
+                Strategic Planning Team
+            </div>
+        </div>
+        <div class="footer">
+            <div class="nhn-logo white">NHN</div>
+            <div class="copyright">© 2026 NHN Corp. All Rights Reserved.</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
